@@ -12,12 +12,12 @@ public class ClassGrade {
 
   private String subject;
   private String courseNumber;
-  private String className;
+  private static String className;
   List<Assignment> assignments;
 
   /**
    * This is the constructor for the ClassGrade class.
-   **/
+   */
 
   public ClassGrade(String subject, String courseNumber,
                     String className, List<Assignment> assignments) {
@@ -43,7 +43,7 @@ public class ClassGrade {
     this.courseNumber = courseNumber;
   }
 
-  public String getClassName() {
+  public static String getClassName() {
     return className;
   }
 
