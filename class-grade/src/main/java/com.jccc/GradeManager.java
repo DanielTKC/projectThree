@@ -44,6 +44,10 @@ public class GradeManager {
     return null;
   }
 
+  public static List<ClassGrade> getClassGrades() {
+    return classGrades;
+  }
+
 
 
 
