@@ -11,7 +11,7 @@ import java.util.List;
 
 public class GradeManager {
 
-  private static List<ClassGrade> classGrades;
+  private static List<ClassGrade> classGrades = new ArrayList<>();
 
 
   /**
@@ -26,18 +26,26 @@ public class GradeManager {
    */
 
   public static boolean addAssignment(String className, Assignment assignment) {
+
     for (ClassGrade classGrade : classGrades) {
-      if (ClassGrade.getClassName().equals(className)) {
-        classGrade.setAssignments((List<Assignment>) assignment);
+
+      if (classGrade.getClassName().equals(className)) {
+        List<Assignment> assignments = classGrade.getAssignments();
+        assignments.add(assignment);
+        classGrade.setAssignments(assignments);
         return true;
       }
     }
     return false;
   }
 
+
+  /**
+   * This is the method to get a class grade by class name.
+   */
   public static ClassGrade getClassGradeByClassName(String className) {
     for (ClassGrade classGrade : classGrades) {
-      if (ClassGrade.getClassName().equals(className)) {
+      if (classGrade.getClassName().equals(className)) {
         return classGrade;
       }
     }
@@ -47,10 +55,4 @@ public class GradeManager {
   public static List<ClassGrade> getClassGrades() {
     return classGrades;
   }
-
-
-
-
-
-
 }

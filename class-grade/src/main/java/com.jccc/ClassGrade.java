@@ -12,7 +12,7 @@ public class ClassGrade {
 
   private String subject;
   private String courseNumber;
-  private static String className;
+  private  String className;
   List<Assignment> assignments;
 
   /**
@@ -43,7 +43,7 @@ public class ClassGrade {
     this.courseNumber = courseNumber;
   }
 
-  public static String getClassName() {
+  public String getClassName() {
     return className;
   }
 
@@ -73,8 +73,10 @@ public class ClassGrade {
     if (totalPoints == 0) {
       return 0;
     }
-    return Math.round(receivedPoints / totalPoints) * 1000.0 / 100.0;
+    double grade = receivedPoints / totalPoints * 100;
+    return Double.parseDouble(String.format("%.2f", grade));
   }
+
 
   @Override
   public String toString() {

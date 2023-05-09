@@ -1,0 +1,14 @@
+package com.jccc;
+
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
+
+/**
+ * This class is used to configure the REST API.
+ */
+
+@ApplicationPath("/api")
+public class ApplicationConfig extends Application {
+
+
+}

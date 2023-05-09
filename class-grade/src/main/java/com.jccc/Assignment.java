@@ -47,7 +47,8 @@ public class Assignment {
   }
 
   public double calculateGrade() {
-    return Math.round(receivedPoints / totalPoints) * 1000.0 / 100.0;
+    double grade = receivedPoints / totalPoints * 100;
+    return Double.parseDouble(String.format("%.2f", grade));
   }
 
   @Override
